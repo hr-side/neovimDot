@@ -17,12 +17,7 @@ return {
 
         vim.lsp.config("lua_ls", { capabilities = capabilities })
         vim.lsp.config("pyright", { capabilities = capabilities })
-        vim.lsp.config("clangd", {
-            capabilities = capabilities,
-            root_dir = function(filename)
-              return vim.fs.root(filename, { ".clangd", "compile_commands.json", ".git" }) or vim.uv.cwd()
-            end
-          })
+        vim.lsp.config("clangd", { capabilities = capabilities })
 
           vim.lsp.enable("lua_ls")
           vim.lsp.enable("pyright")
